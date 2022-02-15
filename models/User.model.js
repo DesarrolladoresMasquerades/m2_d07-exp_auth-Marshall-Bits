@@ -6,7 +6,7 @@ const userSchema = new Schema(
       type: String,
       trim: true,
       required: [true, "Username is required."],
-      unique: true
+      unique: true,
     },
     email: {
       type: String,
@@ -15,15 +15,19 @@ const userSchema = new Schema(
       match: [/^\S+@\S+\.\S+$/, "Please use a valid email address."],
       unique: true,
       lowercase: true,
-      trim: true
+      trim: true,
     },
     passwordHash: {
       type: String,
-      required: [true, "Password is required."]
-    }
+      required: [true, "Password is required."],
+    },
+    imgUrl: {
+      type: String,
+      default: "https://cdn-icons-png.flaticon.com/512/456/456212.png",
+    },
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 
